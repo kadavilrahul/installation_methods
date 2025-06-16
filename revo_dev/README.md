@@ -33,9 +33,14 @@ sudo apt-get install -y wget gnupg2
 
 ```bash
 sudo mkdir -p -m 755 /etc/apt/keyrings
+```
+```bash
 wget -nv -O- https://acli.atlassian.com/gpg/public-key.asc | sudo gpg --dearmor -o /etc/apt/keyrings/acli-archive-keyring.gpg
-sudo chmod go+r 
-/etc/apt/keyrings/acli-archive-keyring.gpg
+```
+```bash
+sudo chmod go+r /etc/apt/keyrings/acli-archive-keyring.gpg
+```
+```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/acli-archive-keyring.gpg] https://acli.atlassian.com/linux/deb stable main" | sudo tee /etc/apt/sources.list.d/acli.list > /dev/null
 ```
 
@@ -43,6 +48,8 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/acli-ar
 
 ```bash
 sudo apt update
+```
+```bash
 sudo apt install -y acli
 ```
 
@@ -185,18 +192,24 @@ acli rovodev run "Create unit tests for all components without tests"
 
 ## References
 
-- Official Rovo Dev CLI docs:  
-  https://rovodevagents-beta.atlassian.net/wiki/external/Yzc2NzI4MTk3YTBhN
-DdiYjkzZDhhZTc3MjE0ZmE4Y2Q#Install-Rovo-Dev-CLI
-
-- Atlassian ACLI Linux install guide:  
+- Official Rovo Dev CLI docs:
+  ```
+  https://rovodevagents-beta.atlassian.net/wiki/external/Yzc2NzI4MTk3YTBhNDdiYjkzZDhhZTc3MjE0ZmE4Y2Q#Install-Rovo-Dev-CLI
+  ```
+- Atlassian ACLI Linux install guide:
+  ```
   https://developer.atlassian.com/cloud/acli/guides/install-linux/
-
-- Rovo Dev CLI API page:  
+  ```
+  
+- Rovo Dev CLI API page:
+  ``` 
   https://id.atlassian.com/manage-profile/security/api-tokens
-
-- Rovo Dev CLI run page:  
+  ```
+  
+- Rovo Dev CLI run page:
+  ``` 
   https://nilgiri-stores.atlassian.net/dev-agents/rovo-dev-cli
+  ```
 
 ---
 
