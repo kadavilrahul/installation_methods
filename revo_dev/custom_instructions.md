@@ -44,6 +44,9 @@ agent:
     - Follow language-specific conventions
     - Create comprehensive documentation
     - Write self-documenting code with meaningful names
+    - Use MCP fetch tools to search the internet for current solutions, documentation, and best practices when needed
+    - Research latest libraries, frameworks, and tools using web search before implementing
+    - Verify solutions against current online documentation and community resources
 ```
 
 ### Method 2: Instruction Templates (Recommended)
@@ -77,6 +80,17 @@ instructions:
   - name: comments
     description: Add meaningful code comments
     content_file: comments.md
+  
+  # Internet Research & Solutions
+  - name: research-solution
+    description: Research solutions and best practices using MCP fetch
+    content_file: research_solution.md
+  - name: find-libraries
+    description: Find and evaluate libraries/frameworks using web search
+    content_file: find_libraries.md
+  - name: verify-docs
+    description: Verify implementation against current online documentation
+    content_file: verify_docs.md
 ```
 
 2. Create instruction files in the same directory
@@ -197,6 +211,90 @@ esac
 Make executable: `chmod +x run.sh`
 ```
 
+### Research Solution Template (`research_solution.md`)
+```markdown
+# Research Solution Using MCP Fetch
+
+Use MCP fetch tools to research current solutions and best practices:
+
+## Research Process
+1. **Search for Solutions**: Use fetch_html or fetch_markdown to search documentation sites, Stack Overflow, GitHub
+2. **Analyze Current Practices**: Look for recent implementations and community recommendations
+3. **Compare Approaches**: Evaluate multiple solutions before implementing
+4. **Verify Currency**: Ensure information is up-to-date and relevant
+
+## Example Research Queries
+- Official documentation for libraries/frameworks
+- Stack Overflow discussions for specific problems
+- GitHub repositories with similar implementations
+- Blog posts and tutorials from reputable sources
+
+## Implementation Steps
+1. Research the problem domain thoroughly
+2. Identify 2-3 potential solutions
+3. Evaluate pros/cons of each approach
+4. Choose the most appropriate solution
+5. Implement with current best practices
+6. Document the chosen approach and reasoning
+```
+
+### Find Libraries Template (`find_libraries.md`)
+```markdown
+# Find and Evaluate Libraries Using Web Search
+
+Research and evaluate libraries/frameworks before implementation:
+
+## Research Checklist
+- **Official Documentation**: Fetch and review official docs
+- **GitHub Repository**: Check stars, issues, recent commits
+- **Community Support**: Look for Stack Overflow discussions
+- **Compatibility**: Verify version compatibility
+- **Performance**: Research benchmarks and performance comparisons
+- **Security**: Check for known vulnerabilities
+- **Maintenance**: Evaluate active development and support
+
+## Evaluation Criteria
+1. **Popularity**: GitHub stars, npm downloads, community size
+2. **Maintenance**: Recent commits, issue response time
+3. **Documentation**: Quality and completeness
+4. **Performance**: Benchmarks and real-world usage
+5. **Security**: Vulnerability reports and security practices
+6. **License**: Compatibility with project requirements
+
+## Implementation
+- Always fetch latest documentation before implementing
+- Include version pinning in dependencies
+- Document why the library was chosen
+```
+
+### Verify Documentation Template (`verify_docs.md`)
+```markdown
+# Verify Implementation Against Current Documentation
+
+Use MCP fetch to verify implementations against current online documentation:
+
+## Verification Process
+1. **Fetch Official Docs**: Get latest documentation from official sources
+2. **Check API Changes**: Verify method signatures and parameters
+3. **Review Examples**: Compare implementation with official examples
+4. **Validate Best Practices**: Ensure following current recommendations
+5. **Security Updates**: Check for security-related changes
+
+## Sources to Check
+- Official API documentation
+- Framework/library changelog
+- Security advisories
+- Migration guides
+- Community best practices
+
+## Implementation Guidelines
+- Always verify against official sources before implementing
+- Check for deprecated methods or patterns
+- Ensure security best practices are current
+- Document any deviations from standard patterns
+- Include links to referenced documentation
+```
+
 ## Using Instructions
 
 ### Command Line
@@ -254,6 +352,12 @@ instructions:
   - name: api-design
     description: Design RESTful API endpoints
     content_file: api_design.md
+  - name: research-solution
+    description: Research solutions and best practices using MCP fetch
+    content_file: research_solution.md
+  - name: find-libraries
+    description: Find and evaluate libraries/frameworks using web search
+    content_file: find_libraries.md
 EOF
 
 # Create instruction files
@@ -262,6 +366,12 @@ echo "Review code for quality, testing, and documentation." >> code_review.md
 
 echo "# API Design" > api_design.md
 echo "Design RESTful APIs with proper endpoints and error handling." >> api_design.md
+
+echo "# Research Solution Using MCP Fetch" > research_solution.md
+echo "Use MCP fetch tools to research current solutions and best practices." >> research_solution.md
+
+echo "# Find and Evaluate Libraries" > find_libraries.md
+echo "Research and evaluate libraries/frameworks before implementation using web search." >> find_libraries.md
 ```
 
 ---
