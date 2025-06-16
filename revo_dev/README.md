@@ -213,15 +213,6 @@ acli rovodev run "Create unit tests for all components without tests"
 
 ---
 
-Modify Config file for full autonomous actions
 
-```
-.rovodev/config.yml
-```
-
-Changes to be made in rovodev config.yaml:
-
-Line 9: Decreased tempreture to 0.1 (Test this)
-Line 37: allowAll: change to true
 
 
