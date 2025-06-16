@@ -37,6 +37,8 @@ agent:
     - Add meaningful comments and documentation
     - Follow SOLID principles
     - Write unit tests for new functionality
+    - Use minimum lines of code to write a function
+    - Build shellscript file run.sh to run all commands
 ```
 
 ### Method 2: Instruction Templates (Recommended)
