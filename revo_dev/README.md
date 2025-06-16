@@ -213,6 +213,15 @@ acli rovodev run "Create unit tests for all components without tests"
 
 ---
 
-If you want, I can also help you with example usage prompts or automation scripts for your eCommerce projects using Rovo Dev CLI. Just ask!
+Modify Config file for full autonomous actions
+
+```
+.rovodev/config.yml
+```
+
+Changes to be made in rovodev config.yaml:
+
+Line 9: Decreased tempreture to 0.1 (Test this)
+Line 37: allowAll: change to true
 
 
