@@ -161,6 +161,79 @@ Once configured, you can ask Rovo Dev to:
 - "Get data from this API endpoint"
 - "What does this website do?" (as demonstrated)
 
+## Troubleshooting Common Issues
+
+### MCP Server Startup Failures
+
+If you encounter errors like "Failed to start STDIO MCP server" when starting Rovo Dev, here are common causes and solutions:
+
+#### 1. Broken Node.js Symlinks
+**Error**: `Failed to start STDIO MCP server with command '/usr/local/bin/node /opt/mcp-servers/fetch-mcp/dist/index.js'`
+
+**Cause**: The Node.js symlink points to a non-existent temporary directory.
+
+**Solution**:
+```bash
+# Check if Node.js symlink is broken
+ls -la /usr/local/bin/node
+
+# If broken, download and extract Node.js
+wget -O /tmp/node-v20.11.0-linux-x64.tar.xz https://nodejs.org/dist/v20.11.0/node-v20.11.0-linux-x64.tar.xz
+cd /tmp && tar -xJf node-v20.11.0-linux-x64.tar.xz
+
+# Create proper symlink
+rm /usr/local/bin/node
+ln -sf /tmp/node-v20.11.0-linux-x64/bin/node /usr/local/bin/node
+
+# Update MCP configuration to use direct path
+```
+
+#### 2. MCP Configuration in Wrong Location
+**Error**: MCP servers not loading despite correct configuration.
+
+**Cause**: MCP configuration file moved to wrong location (e.g., `/root/mcp.json` instead of `/root/.rovodev/mcp.json`).
+
+**Solution**:
+```bash
+# Move MCP config to correct location
+mv /root/mcp.json /root/.rovodev/mcp.json
+
+# Verify configuration
+cat /root/.rovodev/mcp.json
+```
+
+#### 3. Fixing MCP Configuration After Node.js Issues
+After fixing Node.js installation, update your MCP configuration:
+
+```json
+{
+    "mcpServers": {
+        "fetch": {
+            "command": "/tmp/node-v20.11.0-linux-x64/bin/node",
+            "args": ["/opt/mcp-servers/fetch-mcp/dist/index.js"]
+        }
+    }
+}
+```
+
+#### 4. Testing MCP Server Functionality
+Verify your MCP server works before restarting Rovo Dev:
+
+```bash
+# Test the MCP server directly
+/tmp/node-v20.11.0-linux-x64/bin/node /opt/mcp-servers/fetch-mcp/dist/index.js --help
+
+# Validate JSON configuration
+python3 -m json.tool /root/.rovodev/mcp.json
+```
+
+### General Troubleshooting Tips
+
+1. **Check file permissions**: Ensure MCP server files are executable
+2. **Verify paths**: All paths in MCP configuration must be absolute and valid
+3. **Test dependencies**: Ensure Node.js and required packages are properly installed
+4. **Check logs**: Look for detailed error messages in Rovo Dev startup logs
+
 ## Configuration Structure
 
 ### MCP Server Configuration Format
