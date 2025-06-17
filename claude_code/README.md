@@ -24,6 +24,8 @@ If Node.js is not installed or the version is below 18, install it:
 
 ```bash
 sudo apt update
+```
+```bash
 sudo apt install nodejs npm
 ```
 
@@ -115,10 +117,21 @@ claude doctor
 
 When you first run Claude Code, you'll need to authenticate:
 
-1. Run `claude` to start the interactive session
-2. Follow the on-screen instructions to authenticate through the Anthropic Console
-3. Complete the OAuth process
-4. Ensure you have a Claude Pro or Max plan for unified access
+1. **Run the `claude` command:**
+   - Open your terminal and simply type `claude`
+   - This will start the interactive authentication process.
+
+2. **Follow the on-screen instructions:**
+   - Claude Code will guide you through the authentication process.
+   - This typically involves connecting through the Anthropic Console.
+
+3. **Complete the OAuth process:**
+   - You'll be redirected to a web browser to complete the OAuth flow.
+   - Follow the prompts to authorize Claude Code to access your Anthropic account.
+
+4. **Ensure you have a Claude Pro or Max plan:**
+   - You may need a Claude Pro or Max subscription for unified access.
+   - Check your Anthropic account to confirm your subscription status.
 
 ## Troubleshooting
 
@@ -165,6 +178,26 @@ echo 'export PATH="/tmp/node-v20.11.0-linux-x64/bin:$PATH"' >> ~/.bashrc
 # Reload bashrc
 source ~/.bashrc
 ```
+
+### Authentication Issues
+
+If you get "Invalid API key · Please run /login":
+
+1. **Run the `claude` command:**
+   - Open your terminal and simply type `claude`
+   - This will start the interactive authentication process.
+
+2. **Follow the on-screen instructions:**
+   - Claude Code will guide you through the authentication process.
+   - This typically involves connecting through the Anthropic Console.
+
+3. **Complete the OAuth process:**
+   - You'll be redirected to a web browser to complete the OAuth flow.
+   - Follow the prompts to authorize Claude Code to access your Anthropic account.
+
+4. **Ensure you have a Claude Pro or Max plan:**
+   - You may need a Claude Pro or Max subscription for unified access.
+   - Check your Anthropic account to confirm your subscription status.
 
 ## System Information
 
