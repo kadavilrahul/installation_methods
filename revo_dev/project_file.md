@@ -15,5 +15,5 @@
   - name: edit-small-sections
     description: Edit small sections of code at a time to avoid LLM reponse error
   - name: code-testing
-    description: Create run.sh file with all commands in sequence and with interative features if needed. 
+    description: Create run.sh file with every command like venv, requirements etc in sequence and with interative features if needed. 
   ```
