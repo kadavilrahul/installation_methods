@@ -16,4 +16,8 @@
     description: Edit small sections of code at a time to avoid LLM reponse error
   - name: code-testing
     description: Create run.sh file with every command like venv, requirements etc in sequence and with interative features if needed. 
+  - name: run-script
+    description: The entire codebase should work by running run.sh file
+  - name: llm-error
+    description: Do one task at a time and don't let LLM response error come
   ```
