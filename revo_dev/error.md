@@ -34,17 +34,11 @@ Here are the most common causes and solutions:
 4. **Avoid Sensitive Data:** Remove personal information when possible
 5. **Check Formatting:** Ensure code and text are properly formatted
 
-## For Your Resume File:
+## For Your Files:
 
-Since you have a resume file, if you're getting errors when working with it, consider:
+If you're getting errors when working, consider:
 
 • Removing personal contact information before sharing
 • Working with specific sections rather than the entire file
 • Asking focused questions about particular aspects
 
-## What would you like to do next?
-
-• Work on a specific section of your resume?
-• Troubleshoot a particular error you're experiencing?
-• Get help with HTML/CSS modifications?
-• Something else entirely?
