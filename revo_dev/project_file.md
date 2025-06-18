@@ -19,5 +19,5 @@
   - name: run-script
     description: The entire codebase should work by running run.sh file
   - name: llm-error
-    description: Do one task at a time and don't let LLM response error come
+    description: Do one task at a time and don't let error "Failed to generate an LLM response" come
   ```
