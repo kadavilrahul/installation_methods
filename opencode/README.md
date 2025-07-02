@@ -10,28 +10,93 @@ curl -fsSL https://opencode.ai/install | bash
 ## Start commands:
 List of commands:
 
-- ``opencode --help``
+<details>
+<summary>opencode --help</summary>
 
-- ``opencode --version``
+```bash
+opencode --help
+```
+</details>
 
-- ``opencode run [message..]``
+<details>
+<summary>opencode --version</summary>
 
-- ``opencode auth login``
+```bash
+opencode --version
+```
+</details>
 
-- ``opencode auth logout``
+<details>
+<summary>opencode run [message..]</summary>
 
-- ``opencode auth list``
+```bash
+opencode run [message..]
+```
+</details>
 
-- ``opencode [project]``
+<details>
+<summary>opencode auth login</summary>
 
-- ``opencode upgrade [target]``
+```bash
+opencode auth login
+```
+</details>
 
-- ``opencode upgrade``
+<details>
+<summary>opencode auth logout</summary>
 
-- ``opencode serve``
+```bash
+opencode auth logout
+```
+</details>
 
-- ``opencode models``
+<details>
+<summary>opencode auth list</summary>
 
+```bash
+opencode auth list
+```
+</details>
+
+<details>
+<summary>opencode [project]</summary>
+
+```bash
+opencode [project]
+```
+</details>
+
+<details>
+<summary>opencode upgrade [target]</summary>
+
+```bash
+opencode upgrade [target]
+```
+</details>
+
+<details>
+<summary>opencode upgrade</summary>
+
+```bash
+opencode upgrade
+```
+</details>
+
+<details>
+<summary>opencode serve</summary>
+
+```bash
+opencode serve
+```
+</details>
+
+<details>
+<summary>opencode models</summary>
+
+```bash
+opencode models
+```
+</details>
 
 
 
