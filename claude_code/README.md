@@ -179,10 +179,50 @@ If you still get "claude: command not found" after installation:
 
 ### Permission Issues
 
-If you encounter permission errors during installation:
+This is a common issue when installing global npm packages on Linux-based systems, including WSL. The problem is:
+
+```bash
+npm ERR! Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules'
+```
+
+This means npm is trying to install global packages to a system-wide location that requires root privileges, but you ran the command as a normal user.
+
+#### ✅ Quick Fix: Run with sudo
+```bash
+sudo npm install -g @anthropic-ai/claude-code
+```
+
+This is the most straightforward and clean solution if you're installing global tools like CLI programs.
+
+#### ✅ Safer Alternative: Use nvm (Node Version Manager)
+
+If you don't want to use sudo, or you plan to install/manage multiple Node versions:
+
+1. **Install nvm (if not already):**
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+   source ~/.bashrc
+   ```
+
+2. **Install latest Node.js LTS:**
+   ```bash
+   nvm install --lts
+   nvm use --lts
+   ```
+
+3. **Reinstall the CLI tool globally (now under user-owned directory):**
+   ```bash
+   npm install -g @anthropic-ai/claude-code
+   ```
+
+This installs everything into `~/.nvm` so there's no need for root.
+
+#### ✅ Alternative: Fix npm permissions manually
+
+If you prefer to fix npm permissions without using nvm:
 
 1. **Don't use sudo with npm install**
-2. **Fix npm permissions** (if needed):
+2. **Fix npm permissions:**
    ```bash
    mkdir ~/.npm-global
    npm config set prefix '~/.npm-global'
