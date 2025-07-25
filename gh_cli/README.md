@@ -115,6 +115,23 @@ sudo apt autoremove
 - Check if your GitHub account has proper permissions
 - For organizations, ensure you have the necessary access rights
 
+### Git Configuration Issues
+If VS Code Git interface won't accept commits, configure your Git identity:
+
+```bash
+# Configure Git user identity globally
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Verify configuration
+git config --list | grep -E "(user.name|user.email)"
+```
+
+**Common Git commit errors:**
+- `Author identity unknown` - Git user not configured (use commands above)
+- `fatal: no email was given` - Email not set in Git config
+- Repository not initialized - Run `git init` in your project folder
+
 ## Additional Resources
 
 - [Official GitHub CLI Documentation](https://cli.github.com/manual/)
