@@ -128,3 +128,22 @@ Flag	Short	Description
 --share		Share the session
 --model	-m	Mode to use in the form of provider/model
 
+## Troubleshooting
+
+### "opencode: command not found" after installation
+
+If you get a "command not found" error after installing OpenCode, the issue is that the binary path isn't available in your current shell session.
+
+**Solutions:**
+1. **Restart your terminal** - This will source your `.bashrc` with the updated PATH
+2. **Source your bashrc manually:**
+   ```bash
+   source ~/.bashrc
+   ```
+3. **Temporarily add to PATH:**
+   ```bash
+   export PATH="$HOME/.opencode/bin:$PATH"
+   ```
+
+The installer adds OpenCode to `~/.opencode/bin/` and updates your `.bashrc`, but the current shell session needs to be refreshed to see the changes.
+
